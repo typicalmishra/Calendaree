@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.now-visible {
+    visibility: visible;
+    top: 50%;
+    opacity: 1;
+    padding: 0;
+}
+
+.h-primary {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.section-for-managing-member-permission-security-guard {
+    height: fit-content;
+    display: flex;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff7f6;
+    position: static;
+}
+
+.div-for-search-user-for-flat-management {
+    width: 100%;
+}
+
+.table-for-members .td-for-submit-button {
+    width: 100%;
+}
+
+.div-having-submit-button {
+    text-align: center;
+}
+
+.div-for-search-user-for-flat-management form {
+    right: 0;
+}
+
+.table-for-members {
+    margin-bottom: 1rem;
+}
+
+.profile .form-to-display-searched-users {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+
+/* .table-for-members tr {
+    border: 1px solid grey;
+} */
+
+.div-to-display-found-users {
+    width: 100%;
+}
+
+.div-containing-radio-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div-having-radio-input-and-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.div-having-radio-input-and-label label {
+    font-size: 1rem;
+    width: fit-content;
+    margin: 0;
+    margin-left: 2px;
+}
+
+.div-having-submit-button button[type=submit] {
+    font-size: 14px;
+    color: rgb(0, 0, 0, 0.8);
+    background-color: #e4bfba;
+    width: fit-content;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

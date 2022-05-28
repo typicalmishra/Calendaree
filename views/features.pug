@@ -1,0 +1,71 @@
+extends baseSite.pug
+block style
+  link(rel='stylesheet', href='https://unpkg.com/aos@2.3.1/dist/aos.css')
+  link(href='/static/style/fontArvo.css' rel='stylesheet')
+  link(href='/static/style/fontQuickSand.css' rel='stylesheet')
+  link(href='/static/style/tailwind.min.css' rel='stylesheet')
+  link(href='/static/style/homePageStyle.css' rel='stylesheet')
+  link(href='/static/style/featuresPageStyle.css' rel='stylesheet')
+  title Calendaree
+block content
+  section.section-in-features-page-containing-all-features
+    .div-containing-features-in-features-page.class-of-div-containing-features-in-features-page
+      .box.one.first-box
+        img(src="../static/image/oneplus.png" alt="WebApp").image-in-first-box
+        div.div-having-content-of-features
+          p.para-having-heading WebApp
+          p.para-having-second-heading Calendaree is a WebApp
+          p.para-having-main-text-of-features It will work same as on your laptop, mobile, tablet of any make and model. You don’t need to install or upgrade application. Just create your account and start using it.
+      .box.four.sixth-box
+        img(src="../static/image/oneplus.png" alt="Feature").image-in-sixth-box
+        div.div-having-content-of-features
+          p.para-having-heading Datewise Storage
+          p.para-having-second-heading store your files on a date
+          p.para-having-main-text-of-features So your files are associated with a date, and which is certainly you want to remember, what happened and when. So there is calendaree
+      .box.one.third-box
+        img(src="../static/image/oneplus.png" alt="Feature").image-in-third-box
+        div.div-having-content-of-features
+          p.para-having-heading Book Appointments
+          p.para-having-second-heading Check and book calendare
+          p.para-having-main-text-of-features Before you visit any friend or place or professional service, you can see their calendar check availability.
+      .box.three.fourth-box
+        img(src="../static/image/oneplus.png" alt="Feature").image-in-fourth-box
+        div.div-having-content-of-features
+          p.para-having-heading  Share documents
+          p.para-having-second-heading  Add your document with appointment
+          p.para-having-main-text-of-features You can share your document in any form before you visit to someone, so that in advance they can review and this will help to save time further
+    .div-containing-features-in-features-page.class-of-div-containing-features-in-features-page
+      .box.five.fifth-box
+        img(src="../static/image/oneplus.png" alt="Feature").image-in-fifth-box
+        div.div-having-content-of-features
+          p.para-having-heading Life Long
+          p.para-having-second-heading and afterlife as well
+          p.para-having-main-text-of-features We promise we will never delete your data in your life and after life as well. We will hand it over to legal nominees, you can also set permissions for your near and dear ones.
+      .box.two.second-box
+        img(src="../static/image/oneplus.png" alt="Feature").image-in-second-box
+        div.div-having-content-of-features
+          p.para-having-heading Multi-Calendars
+          p.para-having-second-heading Calendaree provides you Two or more Calendars
+          p.para-having-main-text-of-features Private Calendar – to manage your personal appointments, and keep them separate from professional Engagements
+          p.para-having-main-text-of-features Professional Calendars – where you can provide your time to you clients, records there visits, documents, receipts, communication
+      .box.one.seventh-box
+        img(src="../static/image/oneplus.png" alt="Feature").image-in-seventh-box
+        div.div-having-content-of-features
+            p.para-having-heading Secure
+            p.para-having-second-heading Every thing is secure
+            p.para-having-main-text-of-features We have enabled end to end encryption and hence we say it is you and only you who can access your information no one else.
+  section.advertisement
+    script(async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+    // Mob2
+    ins.adsbygoogle(style='display:block' data-ad-client='ca-pub-9725756988745063' data-ad-slot='8997088230' data-ad-format='auto' data-full-width-responsive='true')
+    script.
+      (adsbygoogle = window.adsbygoogle || []).push({});                 
+block script                
+    script(src='/static/script/jquery.min.js', crossorigin='anonymous')
+    script(src='/static/script/jquery-3.5.1.min.js')
+    script(src='/static/script/bootstrap.min.js')
+    script(src='/static/script/homeScript.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(src='https://unpkg.com/aos@2.3.1/dist/aos.js')
+    script.
+        AOS.init();

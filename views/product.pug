@@ -1,0 +1,104 @@
+extends baseSite.pug
+block style
+  // Font Awesome
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css')
+  link(rel='stylesheet', href='https://unpkg.com/aos@2.3.1/dist/aos.css')
+  link(href='/static/style/fontArvo.css' rel='stylesheet')
+  link(href='/static/style/fontQuickSand.css' rel='stylesheet')
+  link(href='/static/style/tailwind.min.css' rel='stylesheet')
+  link(href='/static/style/homePageStyle.css' rel='stylesheet')
+  link(href='/static/style/cteamPageStyle.css' rel='stylesheet')
+  link(href='/static/style/productPageStyle.css' rel='stylesheet')
+  title Calendaree
+block content
+    section.main-section-in-cteam-page
+      h2.heading-of-cofounder Products
+      .div-having-image-and-text-inside-main-section-in-cteam-page  
+        .div-having-just-headings-and-text  
+            //- h1.heading-of-team-member Suneet 
+            h2.position-of-team-member Visitor Management for your Society, Building, Office or Home
+            p.main-text-describing-team-member
+              i.fa.fa-check
+              |  Get alerts, approve/authorise visitors
+            p.main-text-describing-team-member
+              i.fa.fa-check
+              |  Keep attendance of maids, staff, visitors
+            p.main-text-describing-team-member
+              i.fa.fa-check
+              |  Keep Records for always
+            p.main-text-describing-team-member
+              i.fa.fa-check
+              |  Get SOS alerts for People in Need
+            p.main-text-describing-team-member
+              i.fa.fa-check
+              |  Maintain Tenants
+            p.main-text-describing-team-member
+              i.fa.fa-check
+              |  Keep Momentums of society
+            p.main-text-describing-team-member
+              i.fa.fa-check
+              |  Many More...
+            p.main-text-describing-team-member.go-to-contact-page  For pricing feel free to contact Calendaree team using Contact link.
+        .div-having-image-of-team-member-inside-cteam-section
+          img.img-of-cofounders.img-of-products(src="/static/image/security.jpeg", alt="Visitor Management", srcset="")
+      .div-having-image-and-text-inside-main-section-in-cteam-page  
+        .div-having-just-headings-and-text  
+          h2.position-of-team-member Notice Boards
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Private/Personal and Public category
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Unlimited number of Messages
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Absolutely FREE
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Useful to Public/Govt/Private Organizations, Households
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Visitors can respond to the notice boards
+          p.main-text-describing-team-member.go-to-contact-page For pricing feel free to contact Calendaree team using Contact link.
+        .div-having-image-of-team-member-inside-cteam-section
+          img.img-of-cofounders.img-of-products(src="/static/image/noticeBoard.jpeg", alt="Umesh Jadhav", srcset="")
+      .div-having-image-and-text-inside-main-section-in-cteam-page  
+        .div-having-just-headings-and-text  
+          h2.position-of-team-member E2E Acounting System
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Maintain Books for all transactions
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Unlimited Transactions
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Compliant Reports
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Bill/Invoice Generator
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Reminders for Payments
+          p.main-text-describing-team-member
+            i.fa.fa-check
+            |  Much More…
+          p.main-text-describing-team-member.go-to-contact-page For pricing feel free to contact Calendaree team using Contact link.
+        .div-having-image-of-team-member-inside-cteam-section
+          img.img-of-cofounders.img-of-products(src="/static/image/accounting.jpeg", alt="Umesh Jadhav", srcset="")
+    section.advertisement
+      script(async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+      // Mob2
+      ins.adsbygoogle(style='display:block' data-ad-client='ca-pub-9725756988745063' data-ad-slot='8997088230' data-ad-format='auto' data-full-width-responsive='true')
+      script.
+        (adsbygoogle = window.adsbygoogle || []).push({});               
+
+block script
+    script(src='/static/script/jquery.min.js', crossorigin='anonymous')
+    script(src='/static/script/jquery-3.5.1.min.js')
+    script(src='/static/script/bootstrap.min.js')
+    script(src='/static/script/homeScript.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(src='https://unpkg.com/aos@2.3.1/dist/aos.js')
+    script.
+        AOS.init();

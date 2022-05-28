@@ -1,0 +1,253 @@
+extends base.pug
+block style
+    // Font Awesome
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css')
+    // Google Fonts
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap')
+    link(href='https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap' rel='stylesheet')
+    // Bootstrap core CSS
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css' rel='stylesheet')
+    // Material Design Bootstrap
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css' rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet'  type='text/css' href='/static/css/business-form.css')
+    link(rel='stylesheet' href='/static/css/timepicker.css')
+    link(href='/static/css/responsive-calendar.css' rel='stylesheet')
+    link(rel='stylesheet' href='/static/css/yourOwnCalendarStyle.css')
+    link(rel='stylesheet' href='/static/css/cssbox.css')
+    link(rel='stylesheet' href='/static/css/securityVehicleRecordStyle.css')
+    title Security Records | Calendareee
+block content    
+  main.main
+    .d-flex.justify-content-center.date-inside-main
+      .main-heading-below-navbar-in-visitor-and-doctor-appointment-page
+          .main-heading-in-visitor-and-doctor-appointment-page Manage Entry/Exit
+          .main-date-heading(style='color: black;')
+              | #{stringifiedDateForSecurityVehicleRecord}
+      a(href="")#anchor-tag-for-entry-form 
+        h2.add-heading-beside-plus-icon IN
+        //- i.fa.fa-plus-circle.add-schedule
+    section.entered 
+      h2.pending-appointments-in-security-vehicle-record Pending Request
+      .all-cards.all-cards-for-appointments
+        if unapprovedAppointmentsDetail.length === 0 && docsVisitorsEntryRequestPending.length === 0
+          h1.when-content-not-present No Pending Requests Today
+        else
+          table.table-for-members 
+              thead
+                  tr 
+                      th Name
+                      th Number
+                      th Host
+                      //- th Reason
+                      //- th Category
+                      th Attachement
+                      th Action
+              tbody  
+                  for singleUnapprovedAppointment in unapprovedAppointmentsDetail
+                      tr
+                          td  #{singleUnapprovedAppointment.requester}    
+                          td  #{singleUnapprovedAppointment.requesterMobileNumber}  
+                          td  #{singleUnapprovedAppointment.description}  
+                          td 
+                            if(singleUnapprovedAppointment.documentImageInScheduleOrAppointment !== null)
+                              a(href='#' + singleUnapprovedAppointment.documentImageInScheduleOrAppointment , id=singleUnapprovedAppointment.documentImageInScheduleOrAppointment)
+                                  .download-attachement
+                                  h4.heading-inside-name-number-description-for-appointments.download-heading View 
+                                    i.fa.fa-download#download-icon 
+                                      .cssbox
+                                  img.cssbox_thumb(src='/' + singleUnapprovedAppointment.documentImageInScheduleOrAppointment)
+                                  span.cssbox_full
+                                    img(src='/' + singleUnapprovedAppointment.documentImageInScheduleOrAppointment)
+                              a.cssbox_close(href="#void")                                    
+                            else 
+                              | No Attachement   
+                          td Accepted
+                          td
+                            a(href="/acceptAppointment/gateKeeper/" + userIdOfTheBusinessCalendar +"/" + singleUnapprovedAppointment.dateOfAppointment+"/" + singleUnapprovedAppointment.requesterUserId + "/" +singleUnapprovedAppointment._id).anchor-tags-for-accept-cancel-entry-buttons-in-pending-appointments.accept Accept
+                            a(href="/cancelAppointment/gateKeeper/" + userIdOfTheBusinessCalendar +"/" + singleUnapprovedAppointment.dateOfAppointment + "/" + singleUnapprovedAppointment.requesterUserId + "/" + singleUnapprovedAppointment._id).anchor-tags-for-accept-cancel-entry-buttons-in-pending-appointments.cancel Cancel   
+                  for singleDocsVisitorsEntryRequestPending in docsVisitorsEntryRequestPending
+                      tr
+                          td  #{singleDocsVisitorsEntryRequestPending.visitorName}   
+                          td  #{singleDocsVisitorsEntryRequestPending.contactNumberOfVisitor}
+                          td  #{singleDocsVisitorsEntryRequestPending.to}
+                          //- if singleDocsVisitorsEntryRequestPending.description == "" 
+                          //-   td Not Given  
+                          //- else  
+                          //-   td #{singleDocsVisitorsEntryRequestPending.description}
+                          //- td #{singleDocsVisitorsEntryRequestPending.typeOfUserCategoryInEntry}   
+                          td 
+                            if(singleDocsVisitorsEntryRequestPending.documentImageInScheduleOrAppointment !== null)
+                              a(href='#' + singleDocsVisitorsEntryRequestPending.photoUrl , id=singleDocsVisitorsEntryRequestPending.photoUrl)
+                                  .download-attachement
+                                  h4.heading-inside-name-number-description-for-appointments.download-heading View 
+                                    i.fa.fa-download#download-icon 
+                                      .cssbox
+                                  img.cssbox_thumb(src='/' + singleDocsVisitorsEntryRequestPending.photoUrl)
+                                  span.cssbox_full
+                                    img(src='/' + singleDocsVisitorsEntryRequestPending.photoUrl)
+                              a.cssbox_close(href="#void")
+                            else 
+                              | No Attachement   
+                          td.td-which-have-accept-and-cancel-button
+                            a(href="/acceptEntry/gateKeeper/" + userIdOfTheBusinessCalendar +"/" + singleDocsVisitorsEntryRequestPending.enteredDate+"/" + singleDocsVisitorsEntryRequestPending.idOfVisitor + "/" + singleDocsVisitorsEntryRequestPending._id).anchor-tags-for-accept-cancel-entry-buttons-in-pending-appointments.accept Accept
+                            a(href="/cancelEntry/gateKeeper/" + userIdOfTheBusinessCalendar +"/" + singleDocsVisitorsEntryRequestPending.enteredDate+"/" + singleDocsVisitorsEntryRequestPending.idOfVisitor + "/" + singleDocsVisitorsEntryRequestPending._id).anchor-tags-for-accept-cancel-entry-buttons-in-pending-appointments.cancel Cancel    
+    section.entered 
+      h2.accepted-appointments-in-security-vehicle-record Accepted Requests
+      .all-cards.all-cards-for-appointments
+        if acceptedAppointmentsDetail.length === 0 
+          h1.when-content-not-present No Accepted Requests Today
+        else
+            table.table-for-members 
+                        thead
+                            tr 
+                                th Name
+                                th Number
+                                th Reason
+                                th Attachement
+                                th Status
+                        tbody  
+                            for singleAcceptedAppointment in acceptedAppointmentsDetail
+                                tr
+                                    td  #{singleAcceptedAppointment.requester}    
+                                    td  #{singleAcceptedAppointment.requesterMobileNumber}  
+                                    td  #{singleAcceptedAppointment.description}  
+                                    td 
+                                      if(singleAcceptedAppointment.documentImageInScheduleOrAppointment !== null)
+                                        a(href='#' + singleAcceptedAppointment.documentImageInScheduleOrAppointment , id=singleAcceptedAppointment.documentImageInScheduleOrAppointment)
+                                          .download-attachement
+                                          h4.heading-inside-name-number-description-for-appointments.download-heading View 
+                                            i.fa.fa-download#download-icon 
+                                          .cssbox
+                                            img.cssbox_thumb(src='/' + singleAcceptedAppointment.documentImageInScheduleOrAppointment)
+                                            span.cssbox_full
+                                              img(src='/' + singleAcceptedAppointment.documentImageInScheduleOrAppointment)
+                                        a.cssbox_close(href="#void")
+                                      else
+                                        | No Attachement        
+                                    td Accepted
+    section.entered
+      h2.currently-in-appointments-in-security-vehicle-record Currently In
+      .all-cards
+        if docsVisitorsEntered === undefined ||  docsVisitorsEntered.length === 0 
+          h1.when-content-not-present No Visitors Right Now
+        else
+          table.table-for-members 
+              thead
+                  tr 
+                      th Name
+                      //- th Vehicle No.
+                      //- th From
+                      th Host
+                      //- th Reason
+                      //- th Category
+                      th Entry Time
+                      th Attachement
+                      th Action
+              tbody  
+                  for visitorsEntered in docsVisitorsEntered
+                    if visitorsEntered.exitTime == null
+                      tr
+                          td  #{visitorsEntered.visitorName}
+                          //- td #{visitorsEntered.vehicleNumber}  
+                          //- td #{visitorsEntered.from}  
+                          td  #{visitorsEntered.to}
+                          //- td                        
+                          //-   if visitorsEntered.description != "" 
+                          //-     |  #{visitorsEntered.description}
+                          //-   else
+                          //-     | Not Given
+                          //- td #{visitorsEntered.typeOfUserCategoryInEntry}    
+                          td                     
+                            if  ((visitorsEntered.entryTime).getHours()).toString().length === 1        
+                              | Entry: #{(visitorsEntered.entryTime).getHours()}: 0#{(visitorsEntered.entryTime).getMinutes()}
+                            else 
+                              | Entry: #{(visitorsEntered.entryTime).getHours()}: #{(visitorsEntered.entryTime).getMinutes()}
+                          td 
+                            if(visitorsEntered.photoUrl !== null)
+                              //- a.anchor-tag-for-editing-the-personal-schedule(href="/" + visitorsEntered.photoUrl , download)                  
+                              a(href='#' + visitorsEntered.photoUrl , id=visitorsEntered.photoUrl)
+                                  .download-attachement
+                                  h4.heading-inside-name-number-description-for-appointments.download-heading View 
+                                    i.fa.fa-download#download-icon 
+                                      .cssbox
+                                  img.cssbox_thumb(src='/' + visitorsEntered.photoUrl)
+                                  span.cssbox_full
+                                    img(src='/' + visitorsEntered.photoUrl)
+                              a.cssbox_close(href="#void")
+                            else 
+                              | No Attachement   
+                          td
+                            a(href='/businessCalendar/gateKeeper/makeExit/'+idOfCalendarForSecurityVehicleRecord + '/' +dateForSecurityVehicleRecord +'/' + visitorsEntered._id).exit-button(style='margin-left: auto;') Out
+    section.exit
+      h2.exited-appointments-in-security-vehicle-record OUT
+      .all-cards
+        if docsVisitorsExited.length === 0
+          h1.when-content-not-present No Visitor Exited
+        else 
+          table.table-for-members 
+              thead
+                  tr 
+                      th Name
+                      //- th Vehicle No.
+                      //- th From
+                      th Host
+                      //- th Reason
+                      //- th Category
+                      th Entry Time
+                      th Exit  Time
+                      th Attachement
+              tbody  
+                  for visitorsExited in docsVisitorsExited
+                    if visitorsExited.exitTime !== null
+                      tr
+                          td  #{visitorsExited.visitorName}
+                          //- td #{visitorsExited.vehicleNumber}  
+                          //- td #{visitorsExited.from}  
+                          td #{visitorsExited.to}
+                          //- td                        
+                          //-   if visitorsExited.description != "" 
+                          //-     |  #{visitorsExited.description}
+                          //-   else
+                          //-     | Not Given
+                          //- td #{visitorsExited.typeOfUserCategoryInEntry}    
+                          td                     
+                            if  ((visitorsExited.entryTime).getHours()).toString().length === 1        
+                              | Entry: #{(visitorsExited.entryTime).getHours()}: 0#{(visitorsExited.entryTime).getMinutes()}
+                            else 
+                              | Entry: #{(visitorsExited.entryTime).getHours()}: #{(visitorsExited.entryTime).getMinutes()}
+                          td                     
+                            if  ((visitorsExited.exitTime).getHours()).toString().length === 1                    
+                              | Exit:  0#{(visitorsExited.exitTime).getHours()}:#{(visitorsExited.exitTime).getMinutes()}
+                            else
+                              | Exit:  #{(visitorsExited.exitTime).getHours()}:#{(visitorsExited.exitTime).getMinutes()}
+                          td 
+                            if(visitorsExited.photoUrl !== null)
+                              a(href='#' + visitorsExited.photoUrl id=visitorsExited.photoUrl)
+                                  .download-attachement
+                                  h4.heading-inside-name-number-description-for-appointments.download-heading View 
+                                    i.fa.fa-download#download-icon 
+                                      .cssbox
+                                  img.cssbox_thumb(src='/' + visitorsExited.photoUrl)
+                                  span.cssbox_full
+                                    img(src='/' + visitorsExited.photoUrl)
+                              a.cssbox_close(href="#void")
+                            else 
+                              | No Attachement 
+  block script
+      // JQuery
+      script(src='/static/js/timepicker.js')
+      script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+      // Bootstrap tooltips
+      script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js')
+      // Bootstrap core JavaScript
+      script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js')
+      // MDB core JavaScript
+      script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js')
+      script(src='/static/js/dash.js')
+      script(src='/static/js/jquery.js')
+      script(src='/static/js/bootstrap.min.js')
+      script(src='/static/js/responsive-calendar.js')
+      script(src='/static/js/yourOwnCalendarScript.js')
+      script(src='/static/js/securityVehicleRecord.js')

@@ -1,0 +1,42 @@
+extends baseSite.pug
+block style
+  link(rel='stylesheet', href='https://unpkg.com/aos@2.3.1/dist/aos.css')
+  link(href='/static/style/fontArvo.css' rel='stylesheet')
+  link(href='/static/style/fontQuickSand.css' rel='stylesheet')
+  link(href='/static/style/tailwind.min.css' rel='stylesheet')
+  link(href='/static/style/homePageStyle.css' rel='stylesheet')
+  link(href='/static/style/cteamPageStyle.css' rel='stylesheet')
+  title Calendaree
+block content
+    section.main-section-in-cteam-page
+      h2.heading-of-cofounder Calendaree Team
+      .div-having-image-and-text-inside-main-section-in-cteam-page  
+        .div-having-just-headings-and-text  
+          h1.heading-of-team-member Suneet Sharma
+          h2.position-of-team-member Cofounder
+          p.main-text-describing-team-member IT Enthusiast, Passionate, Logical and Workohalic. 18+ Years of experience in IT specially on Infra implementation projects in telecom, finance and elearning sector. Implementation of various innovative ideas to resolve complex issues. Let's do it, we will win approach.
+        .div-having-image-of-team-member-inside-cteam-section
+          img.img-of-cofounders(src="/static/image/suneet.png", alt="Suneet Sharma", srcset="")
+      .div-having-image-and-text-inside-main-section-in-cteam-page  
+        .div-having-just-headings-and-text  
+          h1.heading-of-team-member Umesh Jadhav
+          h2.position-of-team-member Cofounder
+          p.main-text-describing-team-member Umesh has over 2 decades of experience in data/database engineering, IT infra management experience in large complex enterprise systems e.g. Banking, Telecom, e-commerce , ERP (SAP) and complex data platforms. Extensive experience in building massively scalable multi tenant platforms using Big data, Oracle and SQL technologies in e-commerce startups. Built strong relationships with business leaders and project stakeholders and possess broad competence in strategic management of technical, finance & marketing areas and driving new IT initiatives
+        .div-having-image-of-team-member-inside-cteam-section
+          img.img-of-cofounders(src="/static/image/umesh.png", alt="Umesh Jadhav", srcset="")
+    section.advertisement
+      script(async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+      // Mob2
+      ins.adsbygoogle(style='display:block' data-ad-client='ca-pub-9725756988745063' data-ad-slot='8997088230' data-ad-format='auto' data-full-width-responsive='true')
+      script.
+        (adsbygoogle = window.adsbygoogle || []).push({});               
+
+block script
+    script(src='/static/script/jquery.min.js', crossorigin='anonymous')
+    script(src='/static/script/jquery-3.5.1.min.js')
+    script(src='/static/script/bootstrap.min.js')
+    script(src='/static/script/homeScript.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(src='https://unpkg.com/aos@2.3.1/dist/aos.js')
+    script.
+        AOS.init();
