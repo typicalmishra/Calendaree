@@ -20,7 +20,7 @@ Personal QR Code :
 
 ![personal qr code](https://user-images.githubusercontent.com/62601267/204956750-f9aaea94-c743-4524-9a67-2182b2b0a6bf.JPG)
 
-Profile Pafe :
+Profile Page :
 
 ![profile page](https://user-images.githubusercontent.com/62601267/204956753-2d6be928-7260-4dfe-9d68-1ee943814c89.JPG)
  
