@@ -1,6 +1,14 @@
 # Calendareee
 It's A Web Application based on Calendar. User can add, remove, change their schedule based on their day. It's easy to use and supe easy to manage your day.
 
+Calendaree Feautres :
+
+![calendar1](https://user-images.githubusercontent.com/62601267/204958684-2664e24d-af49-4cf9-9580-608bb412ec50.JPG)
+
+Sign up :
+
+![sign up](https://user-images.githubusercontent.com/62601267/204958614-be4563ad-c32c-4f56-b929-6b7a394252ad.JPG)
+
 Login Page :
 ![login page](https://user-images.githubusercontent.com/62601267/204956746-7d4a117c-7d9f-4304-baa2-8e09a8d115e5.JPG)
 
